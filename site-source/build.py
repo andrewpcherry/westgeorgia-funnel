@@ -11,7 +11,7 @@ import re, html
 ROOT = Path(__file__).resolve().parents[1]
 BASE = '/westgeorgia-funnel/'
 esc = html.escape
-CSS_V = '20260922f'
+CSS_V = '20260922g'
 
 COMPANY = 'We Buy Houses In West Georgia'
 PHONE, TEL = '(404) 997-2197', 'tel:+14049972197'
