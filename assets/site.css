@@ -759,3 +759,8 @@ br.d{display:inline}
 .benefit-card b{font-size:17px}
 @media (max-width:960px){.sold-head{grid-template-columns:1fr;gap:18px}.sold-grid{grid-template-columns:1fr 1fr}.cond-grid{grid-template-columns:1fr}}
 @media (max-width:640px){.sold-grid{grid-template-columns:1fr 1fr;gap:10px}.sold-grid figure{border-radius:14px;transform:none!important}.cond-foot{font-size:19px}}
+.site-footer a,.site-footer p{overflow-wrap:anywhere}
+.site-footer .footer-grid>div{min-width:0}
+@media (max-width:640px){.site-footer .footer-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.logo img{height:70px}
+@media (max-width:640px){.logo img{height:52px}}
