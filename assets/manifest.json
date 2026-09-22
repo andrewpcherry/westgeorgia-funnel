@@ -1,0 +1,82 @@
+{
+ "jimmy-shayna": {
+  "file": "jimmy-shayna.jpg",
+  "alt": "Jimmy and Shayna from We Buy Houses in West Georgia",
+  "type": "JPEG image data, JFIF standard 1.01, res"
+ },
+ "rev-heather": {
+  "file": "rev-heather.png",
+  "alt": "A Google review from Heather Kirby: \"Jimmy and his team at We Buy Houses in West Georgia are top notch. They made our home selling experience very simple and quick. Any questions we had throughout the process were answered in a timely manner. I definitely recommend them if you are looking to sell your home. I would definitely use them again!!\"",
+  "type": "PNG image data, 1200 x 1200, 8-bit/color"
+ },
+ "rev-nick": {
+  "file": "rev-nick.png",
+  "alt": "A Google review from Nick Castello: \"Jimmy and his team really know their stuff and were a pleasure to work with. When I'm ready to sell another house in Georgia I will certainly be giving him a call!!\"",
+  "type": "PNG image data, 1200 x 1200, 8-bit/color"
+ },
+ "rev-kevin": {
+  "file": "rev-kevin.png",
+  "alt": "A Google review from Kevin Richards: \"I wish I could give Jimmy and the team more than 5 stars. The whole process was quick, efficient, and professional. Everything was completed faster than I thought possible, I received a great offer on my property, and everything was done based on what was best for me. If I ever have another property to sell, I will do business with Jimmy and team again, and will recommend them as often as I possibly can.\"",
+  "type": "PNG image data, 1200 x 1200, 8-bit/color"
+ },
+ "rev-wanda": {
+  "file": "rev-wanda.png",
+  "alt": "A Google review from Wanda Padgett: \"We were VERY satisfied with our house selling experience with Jimmy. He was Professional and stayed in touch on the process that was closed on the date expected. We had 3 offers taking the offer above our asking price. 5 stars !!\"",
+  "type": "PNG image data, 1200 x 1200, 8-bit/color"
+ },
+ "bbb": {
+  "file": "bbb.png",
+  "alt": "BBB Accredited Business logo",
+  "type": "PNG image data, 300 x 114, 8-bit/color R"
+ },
+ "bought-1": {
+  "file": "bought-1.png",
+  "alt": "A ranch-style house with white siding, brown trim, and large tree in the front yard [bought by We Buy Houses in West Georgia]",
+  "type": "PNG image data, 1200 x 900, 8-bit/color "
+ },
+ "bought-2": {
+  "file": "bought-2.png",
+  "alt": "A ranch-style house with blue siding and brown brick [bought by We Buy Houses in West Georgia]",
+  "type": "PNG image data, 1200 x 900, 8-bit/color "
+ },
+ "bought-3": {
+  "file": "bought-3.png",
+  "alt": "A ranch-style red brick house with a closed carport [bought by We Buy Houses in West Georgia]",
+  "type": "PNG image data, 1200 x 900, 8-bit/color "
+ },
+ "bought-4": {
+  "file": "bought-4.png",
+  "alt": "A ranch-style house with white siding, black trim, and a carport [bought by We Buy Houses in West Georgia]",
+  "type": "PNG image data, 1200 x 900, 8-bit/color "
+ },
+ "bought-5": {
+  "file": "bought-5.png",
+  "alt": "A ranch-style house with white siding, gray trim, and several front windows [bought by We Buy Houses in West Georgia]",
+  "type": "PNG image data, 1200 x 900, 8-bit/color "
+ },
+ "bought-6": {
+  "file": "bought-6.png",
+  "alt": "A ranch house with beige siding and wooden shutters bought by We Buy Houses in West Georgia.",
+  "type": "PNG image data, 1200 x 808, 8-bit/color "
+ },
+ "cond-bath": {
+  "file": "cond-bath.jpg",
+  "alt": "A bathroom of a purchased property in need of repairs",
+  "type": "JPEG image data, JFIF standard 1.01, res"
+ },
+ "cond-fire": {
+  "file": "cond-fire.jpg",
+  "alt": "A purchased property with fire damage",
+  "type": "JPEG image data, JFIF standard 1.01, res"
+ },
+ "cond-kitchen": {
+  "file": "cond-kitchen.jpg",
+  "alt": "The kitchen of a house bought without cleaning",
+  "type": "JPEG image data, JFIF standard 1.01, res"
+ },
+ "bought-7": {
+  "file": "bought-7.png",
+  "alt": "A white two-story house purchased in cash by We Buy Houses in West Georgia",
+  "type": "PNG image data, 1200 x 900, 8-bit/color "
+ }
+}
