@@ -11,7 +11,7 @@ import re, html
 ROOT = Path(__file__).resolve().parents[1]
 BASE = '/westgeorgia-funnel/'
 esc = html.escape
-CSS_V = '20260922h'
+CSS_V = '20260922i'
 
 COMPANY = 'We Buy Houses In West Georgia'
 PHONE, TEL = '(404) 997-2197', 'tel:+14049972197'
@@ -101,7 +101,7 @@ def review_ticker():
         guide = '<span class="gr-guide">Local Guide</span>' if r.get('guide') else ''
         text = esc(r['text']).replace('\n', '<br>')
         cards += (f'<li class="gr-card"><a href="{esc(r["url"])}" target="_blank" rel="noopener" aria-label="Read {esc(r["author"])}\u2019s review on Google">'
-                  f'<div class="gr-top"><img class="gr-av" src="{esc(r["avatar"])}" alt="" width="40" height="40" loading="lazy" referrerpolicy="no-referrer">'
+                  f'<div class="gr-top"><span class="gr-av-wrap" data-i="{esc(r["author"][0])}"><img class="gr-av" src="{esc(r["avatar"])}" alt="" width="40" height="40" loading="lazy" referrerpolicy="no-referrer" onerror="this.remove()"></span>'
                   f'<div class="gr-who"><b>{esc(r["author"])}</b><span>{guide}{esc(r["ago"])}</span></div>{G_LOGO}</div>'
                   f'<div class="gr-stars" aria-label="{r["rating"]} out of 5 stars">{stars}</div>'
                   f'<p class="gr-text">{text}</p><span class="gr-more">Read on Google</span></a></li>')
