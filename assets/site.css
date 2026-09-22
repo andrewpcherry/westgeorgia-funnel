@@ -768,3 +768,38 @@ br.d{display:inline}
 .float-card.hello{top:auto;bottom:34%}
 @media (max-width:640px){.float-card.hello{top:auto;bottom:34%}}
 @media (max-width:640px){.float-card.hello{bottom:24%}.float-card.quote{display:none}}
+
+/* ---------- Full Google reviews strip, directly under the header ---------- */
+.gr-band{position:relative;z-index:5;display:flex;align-items:stretch;background:linear-gradient(180deg,#fff,var(--tint));border-bottom:1px solid var(--line);box-shadow:0 14px 30px -26px rgba(13,26,45,.5)}
+.gr-head{flex:none;display:flex;flex-direction:column;justify-content:center;gap:4px;padding:14px 24px 14px max(20px,calc((100vw - 1280px)/2 + 32px));background:var(--night);color:#fff;position:relative;z-index:2;min-width:190px}
+.gr-head::after{content:"";position:absolute;right:-24px;top:0;bottom:0;width:24px;background:linear-gradient(90deg,var(--night),transparent)}
+.gr-head .g-mark{width:30px;height:30px;background:#fff;border-radius:50%;padding:4px}
+.gr-score{display:flex;align-items:center;gap:8px}.gr-score b{font-size:30px;font-weight:850;line-height:1}
+.gr-head small{color:#A8BAD4;font-size:13.5px;font-weight:600}
+.gr-head em{font-style:normal;font-size:13px;font-weight:800;color:var(--act)}
+.gr-viewport{position:relative;flex:1;display:flex;overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 36px,#000 calc(100% - 60px),transparent);-webkit-mask-image:linear-gradient(90deg,transparent,#000 36px,#000 calc(100% - 60px),transparent)}
+.gr-track{display:flex;flex:none;gap:16px;margin:0;padding:14px 8px;list-style:none;animation:gr-scroll 120s linear infinite}
+.gr-band:hover .gr-track,.gr-band:focus-within .gr-track{animation-play-state:paused}
+@keyframes gr-scroll{to{transform:translateX(-100%)}}
+.gr-card{flex:none;width:360px}
+.gr-card a{display:flex;flex-direction:column;height:100%;background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px 16px;box-shadow:0 10px 24px -20px rgba(13,26,45,.5);transition:border-color .2s,transform .2s}
+.gr-card a:hover{border-color:var(--brand);transform:translateY(-2px)}
+.gr-top{display:flex;align-items:center;gap:10px}
+.gr-av{width:40px;height:40px;border-radius:50%;object-fit:cover;background:var(--tint);flex:none}
+.gr-who{flex:1;min-width:0;line-height:1.2}
+.gr-who b{display:block;color:var(--night);font-size:15.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.gr-who span{font-size:12.5px;color:var(--ink-soft);font-weight:600}
+.gr-guide{color:var(--brand);margin-right:6px}
+.gr-top .g-mark{width:20px;height:20px;flex:none}
+.gr-stars{color:#FBBC05;font-size:15px;letter-spacing:1px;margin:8px 0 4px}
+.gr-text{font-size:14.5px;line-height:1.45;color:var(--ink-2);display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
+.gr-more{margin-top:auto;padding-top:8px;font-size:12.5px;font-weight:800;color:var(--brand)}
+@media (max-width:640px){
+  .gr-head{min-width:0;padding:10px 14px;align-items:flex-start}
+  .gr-head small,.gr-head em{display:none}
+  .gr-score b{font-size:24px}.gr-score .stars{display:none}
+  .gr-card{width:280px}
+  .gr-text{-webkit-line-clamp:3;font-size:14px}
+  .gr-track{padding:10px 6px;animation-duration:95s}
+}
+@media (prefers-reduced-motion:reduce){.gr-viewport{overflow-x:auto}.gr-track{animation:none}.gr-track[aria-hidden]{display:none}}

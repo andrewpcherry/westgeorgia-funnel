@@ -11,7 +11,7 @@ import re, html
 ROOT = Path(__file__).resolve().parents[1]
 BASE = '/westgeorgia-funnel/'
 esc = html.escape
-CSS_V = '20260922g'
+CSS_V = '20260922h'
 
 COMPANY = 'We Buy Houses In West Georgia'
 PHONE, TEL = '(404) 997-2197', 'tel:+14049972197'
@@ -84,12 +84,31 @@ def chips(cls='chips'):
         for k, c, label, *_ in SITUATIONS) + '</div>'
 
 
+GREVIEWS = __import__('json').loads((ROOT / 'site-source/google-reviews.json').read_text())
+G_LOGO = ('<svg class="g-mark" viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/>'
+          '<path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/>'
+          '<path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/>'
+          '<path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>')
+
+
 def review_ticker():
-    items = ''.join(f'<li class="rt-item google"><span class="rt-q" aria-hidden="true">“</span><q>{esc(q)}</q><span class="rt-by">{esc(by)}</span></li>' for q, by in REVIEWS)
-    return (f'<section class="review-ticker" aria-label="What sellers say about {COMPANY}">'
-            f'<a class="rt-badge" href="{GOOGLE_URL}" target="_blank" rel="noopener"><span class="g-logo" aria-hidden="true">G</span><b>{G_RATING}</b>'
-            f'<span class="stars" style="--rating:{G_RATING}" aria-hidden="true">★★★★★</span><small>{G_COUNT} Google reviews</small></a>'
-            f'<div class="rt-viewport"><ul class="rt-track">{items}</ul><ul class="rt-track" aria-hidden="true">{items}</ul></div></section>')
+    """Full Google reviews, verbatim, each linking to the review on Google."""
+    cards = ''
+    for r in GREVIEWS['reviews']:
+        if r.get('show') is False:
+            continue
+        stars = '★' * r['rating'] + '☆' * (5 - r['rating'])
+        guide = '<span class="gr-guide">Local Guide</span>' if r.get('guide') else ''
+        text = esc(r['text']).replace('\n', '<br>')
+        cards += (f'<li class="gr-card"><a href="{esc(r["url"])}" target="_blank" rel="noopener" aria-label="Read {esc(r["author"])}\u2019s review on Google">'
+                  f'<div class="gr-top"><img class="gr-av" src="{esc(r["avatar"])}" alt="" width="40" height="40" loading="lazy" referrerpolicy="no-referrer">'
+                  f'<div class="gr-who"><b>{esc(r["author"])}</b><span>{guide}{esc(r["ago"])}</span></div>{G_LOGO}</div>'
+                  f'<div class="gr-stars" aria-label="{r["rating"]} out of 5 stars">{stars}</div>'
+                  f'<p class="gr-text">{text}</p><span class="gr-more">Read on Google</span></a></li>')
+    return (f'<section class="gr-band" aria-label="Google reviews for {COMPANY}">'
+            f'<a class="gr-head" href="{GOOGLE_URL}" target="_blank" rel="noopener">{G_LOGO}<span class="gr-score"><b>{GREVIEWS["rating"]}</b>'
+            f'<span class="stars" style="--rating:{GREVIEWS["rating"]}" aria-hidden="true">★★★★★</span></span><small>{GREVIEWS["count"]} reviews on Google</small><em>See all</em></a>'
+            f'<div class="gr-viewport"><ul class="gr-track">{cards}</ul><ul class="gr-track" aria-hidden="true">{cards}</ul></div></section>')
 
 
 def header(home=True):
