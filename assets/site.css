@@ -764,3 +764,6 @@ br.d{display:inline}
 @media (max-width:640px){.site-footer .footer-grid{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
 .logo img{height:70px}
 @media (max-width:640px){.logo img{height:52px}}
+/* Keep both faces clear: greeting card sits at chest height, not over Jimmy */
+.float-card.hello{top:auto;bottom:34%}
+@media (max-width:640px){.float-card.hello{top:auto;bottom:34%}}
