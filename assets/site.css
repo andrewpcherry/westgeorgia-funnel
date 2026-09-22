@@ -767,4 +767,4 @@ br.d{display:inline}
 /* Keep both faces clear: greeting card sits at chest height, not over Jimmy */
 .float-card.hello{top:auto;bottom:34%}
 @media (max-width:640px){.float-card.hello{top:auto;bottom:34%}}
-@media (max-width:640px){.float-card.hello{bottom:40%}.float-card.quote{bottom:12%}}
+@media (max-width:640px){.float-card.hello{bottom:46%}.float-card.quote{bottom:9%}}
